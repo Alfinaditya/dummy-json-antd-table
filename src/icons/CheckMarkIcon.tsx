@@ -1,4 +1,3 @@
-import { cn } from '@/utils/tw';
 import React from 'react';
 
 interface Props {
@@ -13,7 +12,7 @@ const CheckMarkIcon: React.FC<Props> = ({ className }) => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className={cn('w-6 h-6', className)}
+      className={className}
     >
       <path
         strokeLinecap="round"
