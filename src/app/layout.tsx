@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
 import Mobilesidebar from '@/modules/partials/Mobilesidebar';
+import { cn } from '@/utils/tw';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,9 +24,9 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <div className="flex">
             <AdminSidebar />
-            <div className="ml-1/4 w-full">
+            <div className={cn('ml-1/4', 'w-full')}>
               <Mobilesidebar />
-              <div className="px-10 py-6">{children}</div>
+              <div className={cn('px-10 py-6')}>{children}</div>
             </div>
           </div>
         </StyledComponentsRegistry>
