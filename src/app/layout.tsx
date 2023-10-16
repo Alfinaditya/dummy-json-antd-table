@@ -2,6 +2,8 @@ import AdminSidebar from '@/modules/partials/AdminSidebar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import StyledComponentsRegistry from '@/lib/AntdRegistry';
+import Mobilesidebar from '@/modules/partials/Mobilesidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,12 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <AdminSidebar />
-          <div className="ml-1/4 w-full">
-            <div className="px-4 py-6">{children}</div>
+        <StyledComponentsRegistry>
+          <div className="flex">
+            <AdminSidebar />
+            <div className="ml-1/4 w-full">
+              <Mobilesidebar />
+              <div className="px-10 py-6">{children}</div>
+            </div>
           </div>
-        </div>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
